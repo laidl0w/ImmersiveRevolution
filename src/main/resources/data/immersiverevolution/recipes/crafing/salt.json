@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraft:sea_pickle"
+    }
+  ],
+  "result": {
+    "count": 3,
+    "item": "immersiverevolution:salt"
+  }
+}
