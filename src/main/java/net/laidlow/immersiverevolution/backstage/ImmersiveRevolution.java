@@ -1,8 +1,12 @@
-package net.laidlow.immersiverevolution;
+package net.laidlow.immersiverevolution.backstage;
 
 import com.mojang.logging.LogUtils;
+import net.laidlow.immersiverevolution.scene.IRBlocks;
+import net.laidlow.immersiverevolution.scene.IRFluids;
+import net.laidlow.immersiverevolution.scene.IRItems;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.material.Fluid;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -23,12 +27,19 @@ public class ImmersiveRevolution
     private static final Logger LOGGER = LogUtils.getLogger();
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MOD_ID);
+    public static final DeferredRegister<Fluid> FLUIDS = DeferredRegister.create(ForgeRegistries.FLUIDS, MOD_ID);
 
     public ImmersiveRevolution()
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         IRItems.register(modEventBus);
+
+        IRBlocks.register(modEventBus);
+
+        IRFluids.FLUID_TYPES.register(modEventBus);
+
+        IRFluids.FLUIDS.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

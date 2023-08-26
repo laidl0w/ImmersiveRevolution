@@ -1,4 +1,4 @@
-package net.laidlow.immersiverevolution;
+package net.laidlow.immersiverevolution.scene;
 
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
